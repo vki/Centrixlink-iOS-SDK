@@ -95,7 +95,7 @@ Centrixlink iOS SDK可以通过Cocoapods工具自动操作完成。使用Cocoapo
 UIKIT_EXTERN NSString *const ADInfoKEYADID;
 
 /**
- *  是否是缓存广告
+ *  是否有缓存视频广告
  */
 UIKIT_EXTERN NSString *const ADInfoKEYPreloadStatus;
 /**
@@ -120,7 +120,7 @@ UIKIT_EXTERN NSString *const ADInfoKEYIsClick;
 /**
  *    视频广告即将显示
  *
- *  @param ADInfo 广告信息
+ *  @param ADInfo 视频广告信息
  */
  
  
@@ -134,7 +134,7 @@ UIKIT_EXTERN NSString *const ADInfoKEYIsClick;
 /**
  *   视频广告完成显示
  *
- *  @param ADInfo 广告信息
+ *  @param ADInfo 视频广告信息
  */
 - (void)centrixLinkADDidShowAD:(NSDictionary *)ADInfo
 {
@@ -146,7 +146,7 @@ UIKIT_EXTERN NSString *const ADInfoKEYIsClick;
 /**
  *   视频广告视频播放完毕状态
  *
- *  @param ADInfo 广告信息
+ *  @param ADInfo 视频广告信息
  */
  
 - (void)centrixLinkADVideoDidPlayStatus:(NSDictionary *)ADInfo
@@ -175,7 +175,7 @@ UIKIT_EXTERN NSString *const ADInfoKEYIsClick;
 
 }
 /**
- *   广告显示已关闭
+ *   视频广告显示已关闭
  *
  *  @param ADInfo 视频广告信息，若播放广告错误则ADInfo包含error字段及错误信息
  */
@@ -198,21 +198,21 @@ UIKIT_EXTERN NSString *const ADInfoKEYIsClick;
     
 ```objc
 /**
- *  用于是否插屏广告显示开关
+ *  用于是否插屏视频广告显示开关
  */
 UIKIT_EXTERN NSString *const ShowADOptionKeyInterstitialAD;
 
 /**
- *  只播放预加载广告
+ *  只播放预加载视频广告
  */
 UIKIT_EXTERN NSString *const ShowADOptionKeyOnlyPreload;
 
 /**
- * 自动关闭EndCard页面，true 为广告自动关闭，false为手动关闭
+ * 自动关闭EndCard页面，true 为视频广告自动关闭，false为手动关闭
  */
 UIKIT_EXTERN NSString *const ShowADOptionKeyAutoCloseADView;
 
-//只显示预加载广告
+//只显示预加载视频广告
 - (void)OnlyShowPreloadADClick:(id )sender {
     //当前是否可以显示广告
     CentrixlinkAD *manager = [CentrixlinkAD sharedInstance];
@@ -252,11 +252,11 @@ UIKIT_EXTERN NSString *const ShowADOptionKeyAutoCloseADView;
     }
   }
 ```
-#### 4.4 插屏位置自定义
+#### 4.4 插屏视频广告位置自定义
 
 ```objc
 /*
-    当使用插屏功能并自定义位置时可以在参数options中加入自定义的位置信息：
+    当使用插屏视频广告功能并自定义位置时可以在参数options中加入自定义的位置信息：
 */
 
 //其中0.2、0.2、0.8分别表示距离上边距20%、左边距20%、最短边所占比例80%(最短边表示在竖屏模式下时宽占屏幕宽的比例，竖屏模式下是高占屏幕高的比例)。
@@ -277,7 +277,7 @@ if (error) {
 #### 4.5 修改插屏位置
 ```objc
 /**
- 调整插屏的布局
+ 调整插屏视频广告的布局
  (注意：所有参数均为百分比，取值范围:[0 1])
 
  @param top 上边距
@@ -306,7 +306,7 @@ if (error) {
 
 ### 5 开屏图片广告相关接口
 
-#### 5.1 设置开屏图片广告代理委托及加载开屏广告
+#### 5.1 设置开屏图片广告代理委托及加载开屏图片广告
 
 ```objc
 - (void)ShowSplash
@@ -322,9 +322,9 @@ if (error) {
 
 ```objc
 /*
- *   开屏广告已经显示
+ *   开屏图片广告已经显示
  *   
- *  @param splashADInfo 广告信息
+ *  @param splashADInfo 开屏图片广告信息
  */
 -(void)splashSuccessPresentScreen:(NSDictionary *)splashADInfo
 {
@@ -333,9 +333,9 @@ if (error) {
 }
 
 /*
- *   开屏广告已经关闭
+ *   开屏图片广告已经关闭
  *   
- *  @param splashADInfo 广告信息
+ *  @param splashADInfo 开屏图片广告信息
  */
 -(void)splashAdClosed:(NSDictionary *)splashADInfo
 {
@@ -343,9 +343,9 @@ if (error) {
 }
 
 /*
- *   开屏广告已被点击
+ *   开屏图片广告已被点击
  *   
- *  @param splashADInfo 广告信息
+ *  @param splashADInfo 开屏图片广告信息
  */
 -(void)splashAdClicked:(NSDictionary *)splashADInfo
 {
@@ -354,9 +354,9 @@ if (error) {
 
 
 /*
- *   显示开屏广告错误
+ *   显示开屏图片广告错误
  *   
- *  @param splashADInfo 广告信息
+ *  @param splashADInfo 开屏图片广告信息
  *  @param error 错误信息
  */
 -(void)splashFailPresentScreen:(NSDictionary *)splashADInfo error:(NSError *)error
